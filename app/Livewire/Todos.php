@@ -8,11 +8,19 @@ class Todos extends Component
 {
     public $todo = '';
 
-    public $todos = [
-        'Learn PHP',
-        'Learn Laravel',
-        'Learn Vue',
-    ];
+    public $todos = [];
+
+    public function mount() {
+        $this->todos = [
+            'Learn PHP',
+            'Learn Laravel',
+            'Learn Vue',
+        ];
+    }
+
+    public function updatedTodo($value) {
+        $this->todo = strtoupper($value);
+    }
 
     public function add() {
         $this->todos[] = $this->todo;
